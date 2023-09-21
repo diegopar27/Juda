@@ -49,6 +49,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'leader',
+    'voter',
 ]
 CORS_ALLOW_HEADERS = [
     "accept",

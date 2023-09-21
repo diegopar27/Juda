@@ -18,6 +18,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import permissions
+from leader.routers import router_Leader
+from voter.routers import router_Voter
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 
@@ -43,4 +45,6 @@ urlpatterns = [
                                        cache_timeout=0), name='schema-swagger-ui'),
     path(r'redocs/', schema_view.with_ui('redoc',
                                          cache_timeout=0), name='schema-redoc'),
+    path('api/Leader/', include(router_Leader.urls)),
+    path('api/Voter/', include(router_Voter.urls)),
 ]
