@@ -1,8 +1,5 @@
 from django.db import models
 
-
-# Create your models here.
-
 TYPE = (
     ('cedula', 'Cedula'),
     ('tarjeta de identidad', 'Tarjeta de identidad'),
