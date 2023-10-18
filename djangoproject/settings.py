@@ -51,6 +51,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'leader',
     'voter',
+    'candidate',
+    'neighborhood',
 ]
 CORS_ALLOW_HEADERS = [
     "accept",
