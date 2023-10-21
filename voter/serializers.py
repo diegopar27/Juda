@@ -1,3 +1,4 @@
+
 from rest_framework.serializers import ModelSerializer
 from voter.models import Voter
 

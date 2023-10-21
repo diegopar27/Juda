@@ -19,6 +19,9 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework_simplejwt import views as jwt_views
 from rest_framework import permissions
+from rest_framework.response import Response
+from rest_framework.viewsets import ModelViewSet
+from rest_framework.permissions import IsAuthenticated
 from leader.routers import router_Leader
 from voter.routers import router_Voter
 from candidate.routers import router_Candidate
@@ -30,6 +33,14 @@ from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
 )
+
+
+class Protegida(ModelViewSet):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        return Response({"content": "Esta vista es segura"})
+
 
 schema_view = get_schema_view(
     openapi.Info(
