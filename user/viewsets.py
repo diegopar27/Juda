@@ -1,5 +1,5 @@
 from rest_framework import viewsets, status
-
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
 from user.models import CustomUser
@@ -10,6 +10,7 @@ class UserViewSet(viewsets.ModelViewSet):
 
     queryset = CustomUser.objects.all()
     serializer_class = UserSerializer
+    permission_classes = [IsAuthenticated]
     http_method_names = ('get', 'post', 'patch', 'delete')
 
     def create(self, request, *args, **kwargs):
