@@ -22,6 +22,7 @@ from leader.routers import router_Leader
 from voter.routers import router_Voter
 from candidate.routers import router_Candidate
 from neighborhood.routers import router_Neighborhood_leader, router_Neighborhood
+from user.routers import router_users
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 
@@ -52,5 +53,6 @@ urlpatterns = [
     path('api/Candidate', include(router_Candidate.urls)),
     path('api/Neighborhood', include(router_Neighborhood.urls)),
     path('api/Neighborhood_leader', include(router_Neighborhood_leader.urls)),
+    path('api/user', include(router_users.urls)),
 
 ]
