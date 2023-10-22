@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'candidate',
     'neighborhood',
     'user',
+    'commune',
     'rest_framework_simplejwt',
 ]
 CORS_ALLOW_HEADERS = [

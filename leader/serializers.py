@@ -13,4 +13,6 @@ class LeaderSerializer(ModelSerializer):
                   'email',
                   'address_of_residence',
                   'phone',
+                  'name_commune',
+                  'name_neighborhood',
                   ]

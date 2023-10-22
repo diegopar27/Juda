@@ -1,10 +1,9 @@
 from django.db import models
-
-# Create your models here.
+from commune.models import Commune
+from neighborhood.models import Neighborhood
 
 TYPE = (
-    ('cedula', 'Cedula'),
-    ('tarjeta de identidad', 'Tarjeta de identidad'),
+    ('cedula de ciudadania', 'Cedula de ciudadania'),
     ('cedula extrangera', 'Cedula extrenagera'),
 )
 
@@ -38,6 +37,16 @@ class Leader (models.Model):
                              blank=False,
                              null=False,
                              verbose_name='Celular')
+    name_commune = models.ForeignKey(Commune,
+                                     blank=False,
+                                     null=False,
+                                     on_delete=models.CASCADE,
+                                     verbose_name='Nombre de la comuna')
+    name_neighborhood = models.ForeignKey(Neighborhood,
+                                          blank=False,
+                                          null=False,
+                                          on_delete=models.CASCADE,
+                                          verbose_name='Nombre del barrio')
 
     def __str__(self):
         return self.name

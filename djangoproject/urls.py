@@ -25,8 +25,9 @@ from rest_framework.permissions import IsAuthenticated
 from leader.routers import router_Leader
 from voter.routers import router_Voter
 from candidate.routers import router_Candidate
-from neighborhood.routers import router_Neighborhood_leader, router_Neighborhood
+from neighborhood.routers import router_Neighborhood
 from user.routers import router_users
+from commune.routers import router_Commune
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from rest_framework_simplejwt.views import (
@@ -69,7 +70,7 @@ urlpatterns = [
     path('api/Voter/', include(router_Voter.urls)),
     path('api/Candidate', include(router_Candidate.urls)),
     path('api/Neighborhood', include(router_Neighborhood.urls)),
-    path('api/Neighborhood_leader', include(router_Neighborhood_leader.urls)),
     path('api/user', include(router_users.urls)),
+    path('api/commune', include(router_Commune.urls)),
 
 ]
