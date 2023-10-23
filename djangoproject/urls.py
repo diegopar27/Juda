@@ -16,6 +16,8 @@ Including another URLconf
 """
 
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
 from django.urls import path, include
 from rest_framework_simplejwt import views as jwt_views
 from rest_framework import permissions
@@ -73,4 +75,4 @@ urlpatterns = [
     path('api/user', include(router_users.urls)),
     path('api/commune', include(router_Commune.urls)),
 
-]
+]+ static("/imaproduct/", document_root=settings.MEDIA_ROOT)
