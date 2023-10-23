@@ -12,6 +12,8 @@ class VoterSerializer(ModelSerializer):
                   'type_of_document',
                   'document_number',
                   'email',
-                  'address_of_residence',
+                  'name_commune',
+                  'name_neighborhood',
                   'phone',
+                  'name_leader',
                   ]
