@@ -1,8 +1,10 @@
 from django.db import models
+from commune.models import Commune
+from neighborhood.models import Neighborhood
+from leader.models import Leader
 
 TYPE = (
-    ('cedula', 'Cedula'),
-    ('tarjeta de identidad', 'Tarjeta de identidad'),
+    ('cedula de ciudadania', 'Cedula de ciudadania'),
     ('cedula extrangera', 'Cedula extrenagera'),
 )
 
@@ -28,14 +30,25 @@ class Voter (models.Model):
     email = models.EmailField(blank=False,
                               null=False,
                               verbose_name='Correo electronico')
-    address_of_residence = models.CharField(max_length=100,
-                                            blank=False,
-                                            null=False,
-                                            verbose_name='Direccion de residencia')
+    name_commune = models.ForeignKey(Commune,
+                                     blank=True,
+                                     null=True,
+                                     on_delete=models.CASCADE,
+                                     verbose_name='Comuna')
+    name_neighborhood = models.ForeignKey(Neighborhood,
+                                          blank=True,
+                                          null=True,
+                                          on_delete=models.CASCADE,
+                                          verbose_name='Barrio')
     phone = models.CharField(max_length=100,
                              blank=False,
                              null=False,
                              verbose_name='Celular')
+    name_leader = models.ForeignKey(Leader,
+                                    blank=True,
+                                    null=True,
+                                    on_delete=models.CASCADE,
+                                    verbose_name='Lider')
 
     def __str__(self):
         return self.name

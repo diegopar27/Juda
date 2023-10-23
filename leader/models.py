@@ -2,6 +2,19 @@ from django.db import models
 from commune.models import Commune
 from neighborhood.models import Neighborhood
 
+from django.core.validators import FileExtensionValidator
+import re
+from django.core.exceptions import ValidationError
+
+
+def validar_cadena_sin_punto(cadena):
+    # Expresión regular que verifica que no haya puntos en la cadena
+    patron = r'^[^.]*$'
+
+    if not re.match(patron, cadena):
+        raise ValidationError('La cadena no debe contener puntos.')
+
+
 TYPE = (
     ('cedula de ciudadania', 'Cedula de ciudadania'),
     ('cedula extrangera', 'Cedula extrenagera'),

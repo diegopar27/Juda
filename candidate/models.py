@@ -4,8 +4,7 @@ import re
 from django.core.exceptions import ValidationError
 
 TYPE = (
-    ('cedula', 'Cedula'),
-    ('tarjeta de identidad', 'Tarjeta de identidad'),
+    ('cedula de ciudadania', 'Cedula de ciudadania'),
     ('cedula extrangera', 'Cedula extrenagera'),
 )
 
