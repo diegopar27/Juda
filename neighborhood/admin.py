@@ -4,6 +4,6 @@ from neighborhood.models import Neighborhood
 
 @admin.register(Neighborhood)
 class NeighborhoodAdmin(admin.ModelAdmin):
-    list_display = ('name_of_the_neighborhood',)
+    list_display = ('name_of_the_neighborhood','n_commune',)
     list_filter = ('name_of_the_neighborhood',)
 
