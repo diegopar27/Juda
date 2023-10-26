@@ -1,11 +1,13 @@
+
 from django.db import models
+
 from commune.models import Commune
 from neighborhood.models import Neighborhood
 from leader.models import Leader
 
 TYPE = (
     ('cedula de ciudadania', 'Cedula de ciudadania'),
-    ('cedula extrangera', 'Cedula extrenagera'),
+    ('cedula extranjeria', 'Cedula extranjeria'),
 )
 
 
@@ -49,7 +51,11 @@ class Voter (models.Model):
                                     null=True,
                                     on_delete=models.CASCADE,
                                     verbose_name='Lider')
+    create_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
 
     def __str__(self):
         return self.name
+
 

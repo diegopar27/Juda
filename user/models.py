@@ -5,6 +5,7 @@ from django.db import models
 from django.utils import timezone
 
 
+
 class CustomUserManager(BaseUserManager):
     """
     Custom user model manager where email is the unique identifiers
