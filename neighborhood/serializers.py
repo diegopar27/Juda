@@ -7,4 +7,5 @@ class NeighborhoodSerializer(ModelSerializer):
         model = Neighborhood
         fields = ['id',
                   'name_of_the_neighborhood',
+                  'n_commune',
                  ]
