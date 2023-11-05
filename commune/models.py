@@ -17,3 +17,6 @@ class Commune (models.Model):
                                     null=False,
                                     blank=False,
                                     verbose_name='Nombre de comuna')
+
+    def __str__(self):
+        return self.name_commune
