@@ -16,4 +16,5 @@ class VoterSerializer(ModelSerializer):
                   'name_neighborhood',
                   'phone',
                   'name_leader',
+                  'voting_booth',
                   ]
