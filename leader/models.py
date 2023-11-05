@@ -19,7 +19,10 @@ TYPE = (
     ('cedula de ciudadania', 'Cedula de ciudadania'),
     ('cedula extrangera', 'Cedula extrenagera'),
 )
-
+TYPE1 = (
+    ('barrio', 'Barrio'),
+    ('comuna', 'Comuna'),
+)
 
 class Leader (models.Model):
     name = models.CharField(max_length=100,
@@ -60,6 +63,11 @@ class Leader (models.Model):
                                           null=False,
                                           on_delete=models.CASCADE,
                                           verbose_name='Nombre del barrio')
+    commune_neighborhood = models.CharField(max_length=100,
+                                            blank=False,
+                                            null=False,
+                                            choices=TYPE1,
+                                            verbose_name='comuna o barrio')
 
     def __str__(self):
         return self.name

@@ -15,4 +15,5 @@ class LeaderSerializer(ModelSerializer):
                   'phone',
                   'name_commune',
                   'name_neighborhood',
+                  'commune_neighborhood',
                   ]
