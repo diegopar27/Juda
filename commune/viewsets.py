@@ -6,6 +6,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.permissions import DjangoModelPermissions
+from rest_framework.generics import RetrieveAPIView
 
 
 from .models import Commune
@@ -18,3 +19,7 @@ class CommuneModelViewSet(ModelViewSet):
     #permission_classes = [IsAuthenticated]
     permission_classes = (DjangoModelPermissions,)
     http_method_names = ['get', 'put', 'post', 'delete']
+
+class CommuneDetailView(RetrieveAPIView):
+    queryset = Commune.objects.all()
+    serializer_class = CommuneSerializer
