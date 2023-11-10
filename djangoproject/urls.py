@@ -19,6 +19,7 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path, include
+from django.views.generic import RedirectView
 from rest_framework_simplejwt import views as jwt_views
 from rest_framework import permissions
 from rest_framework.response import Response
@@ -74,5 +75,6 @@ urlpatterns = [
     path('api/Neighborhood', include(router_Neighborhood.urls)),
     path('api/user', include(router_users.urls)),
     path('api/commune', include(router_Commune.urls)),
+    path('', RedirectView.as_view(url="/admin/")),
 
 ]+ static("/imaproduct/", document_root=settings.MEDIA_ROOT)
