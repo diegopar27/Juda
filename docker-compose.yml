@@ -1,0 +1,16 @@
+version: '3.7'
+services:
+  django-juda:
+    restart: always
+    container_name: django_juda
+    build: .
+    env_file: .env
+    command: gunicorn djangoproject.wsgi:application --reload --bind 0.0.0.0:8000 --workers 3 --timeout 3600
+    volumes:
+    - ./:/JUDA/
+    networks:
+      - juda-net
+
+networks:
+  juda-net:
+    external: true
