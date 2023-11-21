@@ -180,3 +180,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'imaproduct')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = "user.CustomUser"
+
+CSRF_TRUSTED_ORIGINS = ['https://juda.jicof.com']
